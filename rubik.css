@@ -1,0 +1,396 @@
+
+
+:root {
+    --cursorDown: move;
+    --cursorPivot: move;
+    --cursorRotator: grab;
+}
+
+*{
+    user-select: none;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    top: 400px;
+    left: 0vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 3000px;
+    display: grid;
+    gap: 4px;
+    padding: 4px;
+}
+
+.pivot {
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    position: absolute;
+    cursor: var(--cursorPivot);
+}
+
+.box {
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    top: 30%;
+    left: 40%;
+    transition: transform 0.1s;
+    --rotationX: -20deg;
+    --rotationY: 65deg;
+    transform-style: preserve-3d;
+    transform: rotateX(var(--rotationX)) rotateY(var(--rotationY)) scaleZ(1.4) scaleX(1.4) scaleY(1.4);
+
+    z-index: 0;
+
+}
+
+.box div {
+    position: absolute;
+    box-sizing: border-box;
+    transform-style: preserve-3d;
+
+}
+
+.box div span {
+    height: calc(350px / 3 - 6px);
+    width: calc(350px / 3 - 6px);
+    border-radius: 10px;
+    position: absolute;
+}
+
+.rotateBox div {
+    position: relative;
+}
+
+.background-black {
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.block {
+    width: calc(350px / 3);
+    height: calc(350px / 3);
+    transition: transform 1s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+
+
+
+.setaY {
+    position: absolute;
+    width: 200px;
+    height: 1px;
+    border: rgb(0, 255, 17) 1px solid;
+    transform: translateY(-70px) rotateZ(-90deg);
+}
+
+.setaX {
+    position: absolute;
+    width: 200px;
+    height: 1px;
+    border: rgb(0, 64, 255) 1px solid;
+    transform: translateY(-5px);
+}
+
+.setaZ {
+    position: absolute;
+    width: 200px;
+    height: 1px;
+    border: rgb(204, 255, 0) 1px solid;
+    transform: translateY(-5px) rotateY(-90deg);
+}
+.front.b1 {
+    transform: translateZ(calc(350px / 3));
+
+}
+.front.b2 {
+    transform: translateX(calc(350px / 3)) translateZ(calc(350px / 3));
+}
+
+.front.b3 {
+    transform: translateX(calc((350px / 3)*2)) translateZ(calc(350px / 3));
+}
+
+.front.b4 {
+    transform: translateY(calc(350px / 3)) translateZ(calc(350px / 3));
+}
+
+.front.b5 {
+    transform: translateY(calc(350px / 3)) translateX(calc(350px / 3)) translateZ(calc(350px / 3));
+}
+
+.front.b6 {
+    transform: translateY(calc(350px / 3)) translateX(calc((350px / 3)*2)) translateZ(calc(350px / 3));
+}
+
+.front.b7 {
+    transform: translateY(calc((350px / 3)*2)) translateZ(calc(350px / 3));
+}
+
+.front.b8 {
+    transform: translateY(calc((350px / 3)*2)) translateX(calc(350px / 3)) translateZ(calc(350px / 3));
+}
+
+.front.b9 {
+    transform: translateY(calc((350px / 3)*2)) translateX(calc((350px / 3)*2)) translateZ(calc(350px / 3));
+}
+
+.center.b1 {
+    transform: translateZ(0px);
+}
+
+.center.b2 {
+    transform: translateX(calc(350px / 3));
+}
+
+.center.b3 {
+    transform: translateX(calc((350px / 3)*2));
+}
+
+.center.b4 {
+    transform: translateY(calc(350px / 3));
+}
+
+.center.b5 {
+    transform: translateY(calc(350px / 3)) translateX(calc(350px / 3));
+}
+
+.center.b6 {
+    transform: translateY(calc(350px / 3)) translateX(calc((350px / 3)*2));
+}
+
+.center.b7 {
+    transform: translateY(calc((350px / 3)*2));
+}
+
+.center.b8 {
+    transform: translateY(calc((350px / 3)*2)) translateX(calc(350px / 3));
+}
+
+.center.b9 {
+    transform: translateY(calc((350px / 3)*2)) translateX(calc((350px / 3)*2));
+}
+
+.back.b1 {
+    transform: translateZ(calc(-350px / 3)) rotateY(0deg);
+}
+
+.back.b2 {
+    transform: translateX(calc(350px / 3)) translateZ(calc(-350px / 3));
+}
+
+.back.b3 {
+    transform: translateX(calc((350px / 3)*2)) translateZ(calc(-350px / 3));
+}
+
+.back.b4 {
+    transform: translateY(calc(350px / 3)) translateZ(calc(-350px / 3));
+}
+
+.back.b5 {
+    transform: translateY(calc(350px / 3)) translateX(calc(350px / 3)) translateZ(calc(-350px / 3));
+}
+
+.back.b6 {
+    transform: translateY(calc(350px / 3)) translateX(calc((350px / 3)*2)) translateZ(calc(-350px / 3));
+}
+
+.back.b7 {
+    transform: translateY(calc((350px / 3)*2)) translateZ(calc(-350px / 3));
+}
+
+.back.b8 {
+    transform: translateY(calc((350px / 3)*2)) translateX(calc(350px / 3)) translateZ(calc(-350px / 3));
+}
+
+.back.b9 {
+    transform: translateY(calc((350px / 3)*2)) translateX(calc((350px / 3)*2)) translateZ(calc(-350px / 3));
+}
+
+.block .frontSpan {
+    transform: translateZ(calc(350px / 6));
+}
+
+.block .upSpan {
+    transform: rotateX(90deg) translateZ(calc(350px / 6)) translateY(calc(0px / 6));
+}
+
+.block .bottomSpan {
+    transform: translateY(calc(350px / 6)) rotateX(-90deg);
+
+}
+
+.block .rightSpan {
+    transform: rotateY(-90deg) translateZ(calc(350px / 6)) translateX(calc(0px / 6));
+
+}
+
+.block .leftSpan {
+    transform: rotateY(90deg) translateZ(calc(350px / 6)) translateX(calc(0px / 6));
+
+}
+
+.block .backSpan {
+    transform: translateZ(calc(-350px / 6)) rotateY(180deg);
+
+
+}
+
+.sticker,.BLACKSIDE {
+    width: 100%;
+    height: 100%;
+    transform: translateZ(2px);
+    outline: 1px solid transparent;
+    box-shadow: inset 0.05em 0.05em 0.2rem 0 rgba(255, 255, 255, 0.25), inset -0.05em -0.05em 0.2rem 0 rgba(0, 0, 0, 0.25);
+    background-color: black;
+}
+
+
+
+.whiteSticker {
+    background-color: white;
+}
+
+.greenSticker {
+    background-color: rgb(0, 255, 174);
+}
+
+.pinkSticker {
+    background-color: rgba(255, 0, 255, 1);
+}
+
+.orangeSticker {
+    background-color: rgba(255, 127, 127, 1);
+}
+
+.yellowSticker {
+    background-color: rgba(255, 255, 0, 1);
+}
+
+.blueSticker {
+    background-color: rgb(75, 120, 255);
+}
+
+.rotateBox {
+    width: 100%;
+
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.rotateBox.FrontBox {
+    transform: translateZ(184px);
+}
+
+.rotateBox.RightBox {
+    transform: rotateY(-90deg) translateZ(180px);
+}
+
+.rotateBox.LeftBox {
+    transform: rotateY(90deg) translateZ(180px);
+}
+
+.rotateBox.BackBox {
+    transform: rotateY(180deg) translateZ(180px);
+}
+
+.BackLine {
+    flex-direction: row-reverse;
+}
+
+.rotateBox.TopBox {
+    transform: rotateX(90deg) translateZ(180px);
+}
+
+.rotateBox.DownBox {
+    transform: rotateX(-90deg) translateZ(180px);
+}
+
+.rotateLine {
+    height: calc(350px / 3);
+    display: flex;
+}
+
+.rotateButton {
+    position: relative;
+    height: calc(350px / 3);
+    width: calc(350px / 3);
+    /* background-color: black; */
+    cursor: var(--cursorRotator);
+    display: flex;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 1px;
+}
+
+.rotateButton div {
+    position: absolute;
+}
+
+.directionBox {
+    width: 90%;
+    height: 8%;
+    position: absolute;
+
+}
+
+.DirectionUP {
+    top: 0;
+    left: 6%;
+}
+
+.DirectionDOWN {
+    bottom: 0;
+    left: 6%;
+}
+
+.DirectionRIGHT {
+
+    left: 0;
+    width: 8%;
+    height: 90%;
+}
+
+.DirectionLEFT {
+    right: 0;
+    width: 8%;
+    height: 90%;
+}
+
+.rotateButton.rotateBack .DirectionUP {
+    bottom: 0px;
+    top: calc(350px / 3 - 10px);
+
+    left: 4%;
+}
+
+.rotateButton.rotateBack .DirectionDOWN {
+    bottom: 100%;
+    top: 0;
+    left: 4%;
+}
+
+.rotateButton.rotateLeft .DirectionUP {
+    bottom: 0px;
+    top: calc(350px / 3 - 8px);
+    left: 4%;
+}
+
+.rotateButton.rotateLeft .DirectionDOWN {
+    bottom: 100%;
+    top: 0;
+    left: 4%;
+}

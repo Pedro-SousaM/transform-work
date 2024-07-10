@@ -1,0 +1,335 @@
+* {
+  margin: 0;
+  padding: 0;
+  /* border: 1px green solid; */
+}
+
+body {
+  background-color: #171A1F;
+  height: 2500px;
+}
+.section-container{
+  position: relative; 
+  font-size: 19px;
+  height: 700px;
+  
+} 
+
+.section3{
+  position: relative; 
+  
+  height: 700px; 
+  
+}
+.main-title {
+  color: white;
+  font-family: 'Roboto Mono', sans-serif;
+  position: relative;
+  margin-top: 50px;
+  margin-left: 50px;
+}
+.sub-title{
+  color: white;
+  font-family: 'Roboto Mono', sans-serif;
+  position: relative;
+  margin-left: 50px;
+} 
+
+
+.paragraph {
+  color: white;
+  font-family: 'Roboto Mono', sans-serif;
+  margin-left: 50px;
+  margin-top: 20px;
+}
+
+
+.selectTransform{
+  display: flex; 
+  color: #74FDE6; 
+  font-family: 'Roboto Mono', sans-serif; 
+  margin-left: 34px;
+}
+.selectTransform input{
+  transform: translate(31px, 10px);
+}
+.elementoTeste {
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  left: calc(50% - 100px); 
+  top: 300px;
+  border: 2px solid #57B3A4;
+  background-color: #74FDE6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 7px;
+  font-size: 19px; 
+  z-index: -1;
+}
+.slideContainer1{
+  position: absolute;
+  width: 130px;
+  height: 30px;
+  left: calc(15%);
+  top: 50%;
+  
+}
+.quadradoMaior {
+  border: 2px solid #FFFFFF;
+  border-radius: 15px;
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  perspective: 1000px; 
+  transform-style: preserve-3d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.quadradoMenor {
+  border: 2px solid #57B3A4;
+  background-color: #74FDE6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 7px;
+  width: 150px;
+  height: 150px;
+  font-size: 14px;
+  transform: translateZ(0px);
+}
+
+.quadradoMenor::after {
+  content: "perspective 1000px";
+  position: absolute;
+  bottom: -20px;
+  left: 10px;
+  color: #4F5B5E;
+  font-weight: bolder;
+  white-space: nowrap;
+  font-size: 10px;
+}
+
+
+.slideContainer2 {
+  position: absolute;
+  width: 130px;
+  height: 30px;
+  left: calc(50% + 200px);
+  top: 50%;
+  transform: translate(-50%, -50%) rotateZ(-90deg);
+}
+
+.slider {
+  --c: #74FDE6;
+  --g: 4px;
+  --l: 2px;
+  --s: 20px;
+
+  width: 130px;
+  height: var(--s);
+  --_c: color-mix(in srgb, var(--c), #000 var(--p, 0%));
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: none;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.slider:focus-visible,
+.slider:hover {
+  --p: 25%;
+}
+
+.slider:active,
+.slider:focus-visible {
+  --_b: 8.6px;
+}
+
+/* chromium */
+.slider::-webkit-slider-thumb {
+  height: var(--s);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  box-shadow: 0 0 0 var(--_b, var(--l)) inset var(--_c);
+  border-image: linear-gradient(90deg, var(--_c) 50%, #ababab 0) 0 1/calc(50% - var(--l)/2) 100vw/0 calc(100vw + var(--g));
+  -webkit-appearance: none;
+  appearance: none;
+  transition: .3s;
+} 
+.matrixBox{
+  font-size: 30px; 
+  position: relative; 
+  top: 100px; 
+  color: white;
+} 
+.pn4{
+  margin-top: 150px;
+}
+#div1 {
+  position: relative;
+  height: 200px;
+  width: 200px;
+  margin: 100px; 
+  margin-right: 20px; 
+  padding: 10px;
+  border: 2px solid white; 
+  border-radius: 10px;  
+  color: black;
+  font-family: 'Roboto Mono', sans-serif;
+}
+
+#div2 {
+  padding: 50px;
+  position: absolute;
+  border: 2px solid white; 
+  border-radius: 5px;
+  background-color: #74FDE6;
+  transform: rotateY(60deg);
+  transform-style: preserve-3d;
+}
+
+#div3 {
+  padding: 40px;
+  position: absolute;
+  border: 2px solid white; 
+  border-radius: 5px;
+  background-color: #57B3A4;
+  transform: rotateY(-60deg);
+
+} 
+.select3d{
+  color: #74FDE6; 
+  font-family: 'Roboto Mono', sans-serif; 
+  margin-left: 34px;
+} 
+.container3d{
+  display: flex; 
+  align-items:center ;
+} 
+#card{ 
+  transform-style: preserve-3d; 
+  display: flex; 
+  justify-content: center;  
+  transition: 2s; 
+  position: relative; 
+  top: 150px;  
+  left: -500px;
+  cursor: pointer; 
+  perspective: 1000px;  
+}
+.face{
+  display: flex; 
+  padding: 30px;
+  align-items: center;
+  background-color: rgb(17, 232, 182); 
+  height: 320px; 
+  width: 240px;  
+  position: absolute; 
+  border: 3px rgb(0, 0, 0) solid;  
+  transition: 1.5s;  
+  box-shadow: 0px 0px 0px black;
+  border-radius: 2%; 
+  font-size: 20px; 
+  
+} 
+#front{
+  background-color: #74FDE6 ; 
+  transform: rotateY(180deg); 
+  
+}  
+#back{
+  background-color: #179282; 
+  backface-visibility: hidden; 
+  
+}
+.flipF{
+  transform: rotateY(180deg);
+}  
+.flipF:hover{
+  transform: translate(1vh, 1vw) scale(1.06) rotateY(180deg); 
+  
+
+}  
+.flipB:hover{
+  transform: translate(1vh, 1vw) scale(1.06);
+  
+
+} 
+.flipB:hover #front{
+  
+  box-shadow: 10px 10px 5px black;
+
+} 
+.flipF:hover #front{
+  
+  box-shadow: -10px 10px 5px black;
+
+} 
+
+.cube {
+  width: 250px;
+  height: 250px; 
+  position: relative;
+  top: 80px;
+  left: 1200px;
+  animation: rodações 15s infinite linear;
+  transform-style: preserve-3d;
+}
+
+.side {
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  border-radius: 5px; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  font-family: 'Courier New', Courier, monospace; 
+}
+
+.frontCube.side {
+  transform: translateZ(125px);
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.backCube.side {
+  transform: translateZ(-125px) rotateY(180deg);
+  background-color: rgba(255, 127, 127, 1);
+}
+
+.rightCube.side {
+  background-color: rgb(0, 255, 174);
+  transform: translateX(-125px) rotateY(-90deg);
+}
+
+.leftCube.side {
+  background-color: rgba(255, 255, 0, 1);
+  transform: translateX(125px) rotateY(90deg);
+}
+
+.topCube.side {
+  background-color: rgba(255, 0, 255, 1);
+  transform: translateY(-125px) rotateX(90deg);
+}
+
+.bottomCube.side {
+  background-color: rgb(75, 120, 255);
+  transform: translateY(125px) rotateX(-90deg);
+}
+
+@keyframes rodações {
+  0%{transform: rotateX(45deg) rotateY(135deg);} 
+  25%{transform: rotateX(-45deg) rotateY(45deg);} 
+  50%{transform: rotateX(-45deg) rotateY(-45deg);} 
+  75%{transform: rotateX(45deg) rotateY(-45deg);} 
+  100%{transform: rotateX(45deg) rotateY(135deg);}
+}

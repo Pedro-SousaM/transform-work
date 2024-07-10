@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+    </style>
+    <link rel="stylesheet" href="rubik.css">
+    <link rel="stylesheet" href="3d.css"> 
+</head>
+
+<body> 
+  <section class="section-container section1">
+    <h1 class="main-title">Transform</h1>
+    <p class="paragraph pn1">A propriedade transform aplica uma transformação 2D ou 3D a um elemento.<br> Esta
+        propriedade permite girar, dimensionar, mover, inclinar, etc., elementos.</p>
+    <p class="paragraph pn2">Escolha a transformação:</p>
+    <form class="selectTransform">
+        <input type="radio" id="translateX" name="transformChoice" value="translateX">
+        <label for="translateX">translateX</label><br>
+        <input type="radio" id="translateY" name="transformChoice" value="translateY">
+        <label for="translateY">translateY</label><br>
+        <input type="radio" id="scaleX" name="transformChoice" value="scaleX">
+        <label for="scaleX">scaleX</label><br>
+        <input type="radio" id="scaleY" name="transformChoice" value="scaleY">
+        <label for="scaleY">scaleY</label><br>
+        <input type="radio" id="scale" name="transformChoice" value="scaleZ">
+        <label for="scale">scale</label><br>
+        <input type="radio" id="rotateX" name="transformChoice" value="rotateX">
+        <label for="rotateX">rotateX</label><br>
+        <input type="radio" id="rotateY" name="transformChoice" value="rotateY">
+        <label for="rotateY">rotateY</label><br>
+        <input type="radio" id="rotateZ" name="transformChoice" value="rotateZ">
+        <label for="rotateZ">rotateZ</label><br>
+        <input type="radio" id="skewX" name="transformChoice" value="skewX">
+        <label for="skewX">skewX</label><br>
+        <input type="radio" id="skewY" name="transformChoice" value="skewY">
+        <label for="skewY">skewY</label><br><br>
+    </form>
+
+    <div class="elementoTeste">Selecione uma transformação</div>
+    <div class="slideContainer1">
+        <input type="range" class="slider" min="-50" max="50" value="0" step="0">
+    </div> 
+  </section> 
+  <section class="section-container section2">
+    <h2 class="sub-title">Transformações 3d</h2>
+    <p class="paragraph pn3">
+        Transformações 3D no CSS permitem que elementos HTML sejam manipulados em três dimensões: largura, altura e
+        profundidade.<br>
+        a propriedade perspective define a distância do observador ao plano Z de perspectiva.
+    </p>
+    <div class="quadradoMaior">
+        <div class="quadradoMenor">translateZ(<strong>0</strong>px)</div>
+
+    </div>
+    <div class="slideContainer2">
+        <input type="range" class="slider" min="-50" max="50" value="0">
+    </div>
+  </section>  
+  <section class="section-container section2">
+    <h2 class="sub-title">Matriz 3d</h2>
+    <p class="paragraph pn3">
+      A matriz 3D no CSS é usada para aplicar transformações tridimensionais a elementos HTML. Com a propriedade transform, é possível <br>
+      usar a função matrix3d(), que aceita 16 valores em uma matriz 4x4. Esses valores definem rotações, escalas, translações e distorções <br>
+      no espaço 3D. A sintaxe é:
+    </p>
+    <div class="matrixBox">
+      <pre>
+        transform: matrix3d(   |   a1, b1, c1, d1, a2, b2, c2, d2, a3, b3, c3, d3, d4
+          a1, b1, c1, d1,      |   descrevem a transformação linear. enquanto 
+          a2, b2, c2, d2,      |   a4, b4 e c4 descrevem a translação
+          a3, b3, c3, d3,      | 
+          a4, b4, c4, d4       |
+        )
+      </pre>
+    </div> 
+    <div class="paragraph pn4">
+      Entender a matriz 3d é importante pois a transformação aplicada no elemento é armazenada em matriz 3d no navegador, ou seja, quando você<br> quiser acessar e alterar uma transformação usando javascript, irá precisar manipular a matriz 3d daquele elemento
+    </div>
+  </section> 
+  <section class="section-container section3">
+    <h2 class="sub-title">
+        Transform-Style
+    </h2>
+    <p class="paragraph">
+        A propriedade especifica como os elementos aninhados são renderizados em espaço 3d.<br> Ela deve ser usada junto
+        com a propriedade Transform
+    </p>
+    <div class="container3d">
+        <div id="div1">
+            <div id="div2">HELLO
+                <div id="div3">YELLOW</div>
+            </div>
+        </div>
+        <form class="select3d">
+            <input type="radio" id="preserve-3d" name="transformChoice" value="Preserve3d" checked="true">
+            <label for="preserve-3d">preserve-3d</label><br>
+            <input type="radio" id="flat" name="transformChoice" value="Flat">
+            <label for="flat">flat(padrão)</label><br>
+        </form>
+    </div>
+  </section> 
+  <section class="section-container section3">
+    <h2 class="sub-title">
+        Aplicações:
+    </h2>
+    <div id="card" class="flipF">
+
+        <div id="front" class="face">
+            <span id="t1"> Oi, esta é uma mensagem</span>
+        </div>
+        <div id="back" class="face">
+            <span id="t2"> Esta é outra mensagem</span>
+        </div>
+    </div> 
+    <div class="cube">
+        <div class="side frontCube">FRENTE</div>
+        <div class="side backCube">COSTAS</div>
+        <div class="side rightCube">DIREITA</div>
+        <div class="side leftCube">ESQUERDA</div>
+        <div class="side topCube">CIMA</div>
+        <div class="side bottomCube">BAIXO</div>
+    </div>
+
+    <div class="container">
+        <div class="pivot"></div>
+    
+        <div class="box">
+          <div class="rotateBox FrontBox">
+            <div class="rotateLine">
+              <div class="rotateButton rotateFront upFront rightFront r1">
+                <div class="directionBox DirectionUP"></div>
+                <div class="directionBox DirectionDOWN"></div>
+                <div class="directionBox DirectionLEFT"></div>
+                <div class="directionBox DirectionRIGHT"></div>
+              </div>
+              <div class="rotateButton rotateFront upFront midFront r2">
+                <div class="directionBox DirectionUP"></div>
+                <div class="directionBox DirectionDOWN"></div>
+                <div class="directionBox DirectionLEFT"></div>
+                <div class="directionBox DirectionRIGHT"></div>
+              </div>
+              <div class="rotateButton rotateFront upFront leftFront r3">
+                <div class="directionBox DirectionUP"></div>
+                <div class="directionBox DirectionDOWN"></div>
+                <div class="directionBox DirectionLEFT"></div>
+                <div class="directionBox DirectionRIGHT"></div>
+              </div>
+            </div>
+            <div class="rotateLine">
+              <div class="rotateButton rotateFront medFront rightFront r4">
+                <div class="directionBox DirectionUP"></div>
+                <div class="directionBox DirectionDOWN"></div>
+                <div class="directionBox DirectionLEFT"></div>
+                <div class="directionBox DirectionRIGHT"></div>
+              </div>
+              <div class="rotateButton rotateFront medFront midFront r5">
+                <div class="directionBox DirectionUP"></div>
+                <div class="directionBox DirectionDOWN"></div>
+                <div class="directionBox DirectionLEFT"></div>
+                <div class="directionBox DirectionRIGHT"></div>
+              </div>
+              <div class="rotateButton rotateFront medFront leftFront r6">
+                <div class="directionBox DirectionUP"></div>
+                <div class="directionBox DirectionDOWN"></div>
+                <div class="directionBox DirectionLEFT"></div>
+                <div class="directionBox DirectionRIGHT"></div>
+              </div>
+            </div>
+            <div class="rotateLine">
+              <div class="rotateButton rotateFront bottomFront rightFront r7">
+                <div class="directionBox DirectionUP"></div>
+                <div class="directionBox DirectionDOWN"></div>
+                <div class="directionBox DirectionLEFT"></div>
+                <div class="directionBox DirectionRIGHT"></div>
+              </div>
+              <div class="rotateButton rotateFront bottomFront midFront r8">
+                <div class="directionBox DirectionUP"></div>
+                <div class="directionBox DirectionDOWN"></div>
+                <div class="directionBox DirectionLEFT"></div>
+                <div class="directionBox DirectionRIGHT"></div>
+              </div>
+              <div class="rotateButton rotateFront bottomFront leftFront r9">
+                <div class="directionBox DirectionUP"></div>
+                <div class="directionBox DirectionDOWN"></div>
+                <div class="directionBox DirectionLEFT"></div>
+                <div class="directionBox DirectionRIGHT"></div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="rotateBox RightBox">
+            <div class="rotateLine">
+              <div class="rotateButton rotateRight upRight rightRight r1">
+                <div class="directionBox DirectionUP"></div>
+                <div class="directionBox DirectionDOWN"></div>
+                <div class="directionBox DirectionLEFT"></div>
+                <div class="directionBox DirectionRIGHT"></div>
+              </div>
+              <div class="rotateButton rotateRight upRight midRight r2">
+                <div class="directionBox DirectionUP"></div>
+                <div class="directionBox DirectionDOWN"></div>
+                <div class="directionBox DirectionLEFT"></div>
+                <div class="directionBox DirectionRIGHT"></div>
+              </div>
+              <div class="rotateButton rotateRight upRight leftRight r3">
+                <div class="directionBox DirectionUP"></div>
+                <div class="directionBox DirectionDOWN"></div>
+                <div class="directionBox DirectionLEFT"></div>
+                <div class="directionBox DirectionRIGHT"></div>
+              </div>
+            </div>
+            <div class="rotateLine">
+              <div class="rotateButton rotateRight medRight rightRight r4">
+                <div class="directionBox DirectionUP"></div>
+                <div class="directionBox DirectionDOWN"></div>
+                <div class="directionBox DirectionLEFT"></div>
+                <div class="directionBox DirectionRIGHT"></div>
+              </div>
+              <div class="rotateButton rotateRight medRight midRight r5">
+                <div class="directionBox DirectionUP"></div>
+                <div class="directionBox DirectionDOWN"></div>
+                <div class="directionBox DirectionLEFT"></div>
+                <div class="directionBox DirectionRIGHT"></div>
+              </div>
+              <div class="rotateButton rotateRight medRight leftRight r6">
+                <div class="directionBox DirectionUP"></div>
+                <div class="directionBox DirectionDOWN"></div>
+                <div class="directionBox DirectionLEFT"></div>
+                <div class="directionBox DirectionRIGHT"></div>
+              </div>
+            </div>
+            <div class="rotateLine">
+              <div class="rotateButton rotateRight bottomRight rightRight r7">
+                <div class="directionBox DirectionUP"></div>
+                <div class="directionBox DirectionDOWN"></div>
+                <div class="directionBox DirectionLEFT"></div>
+                <div class="directionBox DirectionRIGHT"></div>
+              </div>
+              <div class="rotateButton rotateRight bottomRight midRight r8">
+                <div class="directionBox DirectionUP"></div>
+                <div class="directionBox DirectionDOWN"></div>
+                <div class="directionBox DirectionLEFT"></div>
+                <div class="directionBox DirectionRIGHT"></div>
+              </div>
+              <div class="rotateButton rotateRight bottomRight leftRight r9">
+                <div class="directionBox DirectionUP"></div>
+                <div class="directionBox DirectionDOWN"></div>
+                <div class="directionBox DirectionLEFT"></div>
+                <div class="directionBox DirectionRIGHT"></div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="rotateBox LeftBox">
+            <div class="rotateLine">
+              <div class="rotateButton rotateLeft upLeft rightLeft r1">
+                <div class="directionBox DirectionUP"></div>
+                <div class="directionBox DirectionDOWN"></div>
+                <div class="directionBox DirectionLEFT"></div>
+                <div class="directionBox DirectionRIGHT"></div>
+              </div>
+              <div class="rotateButton rotateLeft upLeft midLeft r2">
+                <div class="directionBox DirectionUP"></div>
+                <div class="directionBox DirectionDOWN"></div>
+                <div class="directionBox DirectionLEFT"></div>
+                <div class="directionBox DirectionRIGHT"></div>
+              </div>
+              <div class="rotateButton rotateLeft upLeft leftLeft r3">
+                <div class="directionBox DirectionUP"></div>
+                <div class="directionBox DirectionDOWN"></div>
+                <div class="directionBox DirectionLEFT"></div>
+                <div class="directionBox DirectionRIGHT"></div>
+              </div>
+            </div>
+            <div class="rotateLine">
+              <div class="rotateButton rotateLeft medLeft rightLeft r4">
+                <div class="directionBox DirectionUP"></div>
+                <div class="directionBox DirectionDOWN"></div>
+                <div class="directionBox DirectionLEFT"></div>
+                <div class="directionBox DirectionRIGHT"></div>
+              </div>
+              <div class="rotateButton rotateLeft medLeft midLeft r5">
+                <div class="directionBox DirectionUP"></div>
+                <div class="directionBox DirectionDOWN"></div>
+                <div class="directionBox DirectionLEFT"></div>
+                <div class="directionBox DirectionRIGHT"></div>
+              </div>
+              <div class="rotateButton rotateLeft medLeft leftLeft r6">
+                <div class="directionBox DirectionUP"></div>
+                <div class="directionBox DirectionDOWN"></div>
+                <div class="directionBox DirectionLEFT"></div>
+                <div class="directionBox DirectionRIGHT"></div>
+              </div>
+            </div>
+            <div class="rotateLine">
+              <div class="rotateButton rotateLeft bottomLeft rightLeft r7">
+                <div class="directionBox DirectionUP"></div>
+                <div class="directionBox DirectionDOWN"></div>
+                <div class="directionBox DirectionLEFT"></div>
+                <div class="directionBox DirectionRIGHT"></div>
+              </div>
+              <div class="rotateButton rotateLeft bottomLeft midLeft r8">
+                <div class="directionBox DirectionUP"></div>
+                <div class="directionBox DirectionDOWN"></div>
+                <div class="directionBox DirectionLEFT"></div>
+                <div class="directionBox DirectionRIGHT"></div>
+              </div>
+              <div class="rotateButton rotateLeft bottomLeft leftLeft r9">
+                <div class="directionBox DirectionUP"></div>
+                <div class="directionBox DirectionDOWN"></div>
+                <div class="directionBox DirectionLEFT"></div>
+                <div class="directionBox DirectionRIGHT"></div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="rotateBox TopBox">
+            <div class="rotateLine">
+              <div class="rotateButton rotateTop upTop rightTop r1">
+                <div class="directionBox DirectionUP"></div>
+                <div class="directionBox DirectionDOWN"></div>
+                <div class="directionBox DirectionLEFT"></div>
+                <div class="directionBox DirectionRIGHT"></div>
+              </div>
+              <div class="rotateButton rotateTop upTop midTop r2">
+                <div class="directionBox DirectionUP"></div>
+                <div class="directionBox DirectionDOWN"></div>
+                <div class="directionBox DirectionLEFT"></div>
+                <div class="directionBox DirectionRIGHT"></div>
+              </div>
+              <div class="rotateButton rotateTop upTop leftTop r3">
+                <div class="directionBox DirectionUP"></div>
+                <div class="directionBox DirectionDOWN"></div>
+                <div class="directionBox DirectionLEFT"></div>
+                <div class="directionBox DirectionRIGHT"></div>
+              </div>
+            </div>
+            <div class="rotateLine">
+              <div class="rotateButton rotateTop medTop rightTop r4">
+                <div class="directionBox DirectionUP"></div>
+                <div class="directionBox DirectionDOWN"></div>
+                <div class="directionBox DirectionLEFT"></div>
+                <div class="directionBox DirectionRIGHT"></div>
+              </div>
+              <div class="rotateButton rotateTop medTop midTop r5">
+                <div class="directionBox DirectionUP"></div>
+                <div class="directionBox DirectionDOWN"></div>
+                <div class="directionBox DirectionLEFT"></div>
+                <div class="directionBox DirectionRIGHT"></div>
+              </div>
+              <div class="rotateButton rotateTop medTop leftTop r6">
+                <div class="directionBox DirectionUP"></div>
+                <div class="directionBox DirectionDOWN"></div>
+                <div class="directionBox DirectionLEFT"></div>
+                <div class="directionBox DirectionRIGHT"></div>
+              </div>
+            </div>
+            <div class="rotateLine">
+              <div class="rotateButton rotateTop bottomTop rightTop r7">
+                <div class="directionBox DirectionUP"></div>
+                <div class="directionBox DirectionDOWN"></div>
+                <div class="directionBox DirectionLEFT"></div>
+                <div class="directionBox DirectionRIGHT"></div>
+              </div>
+              <div class="rotateButton rotateTop bottomTop midTop r8">
+                <div class="directionBox DirectionUP"></div>
+                <div class="directionBox DirectionDOWN"></div>
+                <div class="directionBox DirectionLEFT"></div>
+                <div class="directionBox DirectionRIGHT"></div>
+              </div>
+              <div class="rotateButton rotateTop bottomTop leftTop r9">
+                <div class="directionBox DirectionUP"></div>
+                <div class="directionBox DirectionDOWN"></div>
+                <div class="directionBox DirectionLEFT"></div>
+                <div class="directionBox DirectionRIGHT"></div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="rotateBox DownBox">
+            <div class="rotateLine">
+              <div class="rotateButton rotateDown upDown rightDown r1">
+                <div class="directionBox DirectionUP"></div>
+                <div class="directionBox DirectionDOWN"></div>
+                <div class="directionBox DirectionLEFT"></div>
+                <div class="directionBox DirectionRIGHT"></div>
+              </div>
+              <div class="rotateButton rotateDown upDown midDown r2">
+                <div class="directionBox DirectionUP"></div>
+                <div class="directionBox DirectionDOWN"></div>
+                <div class="directionBox DirectionLEFT"></div>
+                <div class="directionBox DirectionRIGHT"></div>
+              </div>
+              <div class="rotateButton rotateDown upDown leftDown r3">
+                <div class="directionBox DirectionUP"></div>
+                <div class="directionBox DirectionDOWN"></div>
+                <div class="directionBox DirectionLEFT"></div>
+                <div class="directionBox DirectionRIGHT"></div>
+              </div>
+            </div>
+            <div class="rotateLine">
+              <div class="rotateButton rotateDown medDown rightDown r4">
+                <div class="directionBox DirectionUP"></div>
+                <div class="directionBox DirectionDOWN"></div>
+                <div class="directionBox DirectionLEFT"></div>
+                <div class="directionBox DirectionRIGHT"></div>
+              </div>
+              <div class="rotateButton rotateDown medDown midDown r5">
+                <div class="directionBox DirectionUP"></div>
+                <div class="directionBox DirectionDOWN"></div>
+                <div class="directionBox DirectionLEFT"></div>
+                <div class="directionBox DirectionRIGHT"></div>
+              </div>
+              <div class="rotateButton rotateDown medDown leftDown r6">
+                <div class="directionBox DirectionUP"></div>
+                <div class="directionBox DirectionDOWN"></div>
+                <div class="directionBox DirectionLEFT"></div>
+                <div class="directionBox DirectionRIGHT"></div>
+              </div>
+            </div>
+            <div class="rotateLine">
+              <div class="rotateButton rotateDown bottomDown rightDown r7">
+                <div class="directionBox DirectionUP"></div>
+                <div class="directionBox DirectionDOWN"></div>
+                <div class="directionBox DirectionLEFT"></div>
+                <div class="directionBox DirectionRIGHT"></div>
+              </div>
+              <div class="rotateButton rotateDown bottomDown midDown r8">
+                <div class="directionBox DirectionUP"></div>
+                <div class="directionBox DirectionDOWN"></div>
+                <div class="directionBox DirectionLEFT"></div>
+                <div class="directionBox DirectionRIGHT"></div>
+              </div>
+              <div class="rotateButton rotateDown bottomDown leftDown r9">
+                <div class="directionBox DirectionUP"></div>
+                <div class="directionBox DirectionDOWN"></div>
+                <div class="directionBox DirectionLEFT"></div>
+                <div class="directionBox DirectionRIGHT"></div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="rotateBox BackBox">
+            <div class="rotateLine BackLine">
+              <div class="rotateButton rotateBack upBack rightBack r1">
+                <div class="directionBox DirectionUP"></div>
+                <div class="directionBox DirectionDOWN"></div>
+                <div class="directionBox DirectionLEFT"></div>
+                <div class="directionBox DirectionRIGHT"></div>
+              </div>
+              <div class="rotateButton rotateBack upBack midBack r2">
+                <div class="directionBox DirectionUP"></div>
+                <div class="directionBox DirectionDOWN"></div>
+                <div class="directionBox DirectionLEFT"></div>
+                <div class="directionBox DirectionRIGHT"></div>
+              </div>
+              <div class="rotateButton rotateBack upBack leftBack r3">
+                <div class="directionBox DirectionUP"></div>
+                <div class="directionBox DirectionDOWN"></div>
+                <div class="directionBox DirectionLEFT"></div>
+                <div class="directionBox DirectionRIGHT"></div>
+              </div>
+            </div>
+            <div class="rotateLine BackLine">
+              <div class="rotateButton rotateBack medBack rightBack r4">
+                <div class="directionBox DirectionUP"></div>
+                <div class="directionBox DirectionDOWN"></div>
+                <div class="directionBox DirectionLEFT"></div>
+                <div class="directionBox DirectionRIGHT"></div>
+              </div>
+              <div class="rotateButton rotateBack medBack midBack r5">
+                <div class="directionBox DirectionUP"></div>
+                <div class="directionBox DirectionDOWN"></div>
+                <div class="directionBox DirectionLEFT"></div>
+                <div class="directionBox DirectionRIGHT"></div>
+              </div>
+              <div class="rotateButton rotateBack medBack leftBack r6">
+                <div class="directionBox DirectionUP"></div>
+                <div class="directionBox DirectionDOWN"></div>
+                <div class="directionBox DirectionLEFT"></div>
+                <div class="directionBox DirectionRIGHT"></div>
+              </div>
+            </div>
+            <div class="rotateLine BackLine">
+              <div class="rotateButton rotateBack bottomBack rightBack r7">
+                <div class="directionBox DirectionUP"></div>
+                <div class="directionBox DirectionDOWN"></div>
+                <div class="directionBox DirectionLEFT"></div>
+                <div class="directionBox DirectionRIGHT"></div>
+              </div>
+              <div class="rotateButton rotateBack bottomBack midBack r8">
+                <div class="directionBox DirectionUP"></div>
+                <div class="directionBox DirectionDOWN"></div>
+                <div class="directionBox DirectionLEFT"></div>
+                <div class="directionBox DirectionRIGHT"></div>
+              </div>
+              <div class="rotateButton rotateBack bottomBack leftBack r9">
+                <div class="directionBox DirectionUP"></div>
+                <div class="directionBox DirectionDOWN"></div>
+                <div class="directionBox DirectionLEFT"></div>
+                <div class="directionBox DirectionRIGHT"></div>
+              </div>
+            </div>
+          </div>
+          <div class="block front b1">
+           
+            <div class="frontSpan background-black">
+              <span class="sticker whiteSticker"></span>
+            </div>
+            <div class="upSpan background-black">
+              <span class="sticker pinkSticker"></span>
+            </div>
+            <div class="rightSpan background-black">
+              <span class="sticker greenSticker"></span>
+            </div>
+            <div class="leftSpan background-black"><span class="BLACKSIDE"></span></div>
+            <div class="bottomSpan background-black"><span class="BLACKSIDE"></span></div>
+            <div class="backSpan background-black"><span class="BLACKSIDE"></span></div>
+          </div>
+          <div class="block front b2">
+            <div class="frontSpan background-black"><span class="sticker whiteSticker"></span></div>
+            <div class="upSpan background-black"><span class="sticker pinkSticker"></span></div>
+            <div class="rightSpan background-black"><span class="BLACKSIDE"></span></div>
+            <div class="leftSpan background-black"><span class="BLACKSIDE"></span></div>
+            <div class="bottomSpan background-black"><span class="BLACKSIDE"></span></div>
+            <div class="backSpan background-black"><span class="BLACKSIDE"></span></div>
+          </div>
+          <div class="block front b3">
+            <div class="frontSpan background-black"><span class="sticker whiteSticker"></span></div>
+            <div class="upSpan background-black"><span class="sticker pinkSticker"></span></div>
+            <div class="rightSpan background-black"><span class="BLACKSIDE"></span></div>
+            <div class="leftSpan background-black"><span class="sticker yellowSticker"></span></div>
+            <div class="bottomSpan background-black"><span class="BLACKSIDE"></span></div>
+            <div class="backSpan background-black"><span class="BLACKSIDE"></span></div>
+          </div>
+          <div class="block front b4">
+            <div class="frontSpan background-black"><span class="sticker whiteSticker"></span></div>
+            <div class="upSpan background-black"><span class="BLACKSIDE"></span></div>
+            <div class="rightSpan background-black"><span class="sticker greenSticker"></span></div>
+            <div class="leftSpan background-black"><span class="BLACKSIDE"></span></div>
+            <div class="bottomSpan background-black"><span class="BLACKSIDE"></span></div>
+            <div class="backSpan background-black"><span class="BLACKSIDE"></span></div>
+          </div>
+          <div class="block front b5">
+            <div class="frontSpan background-black"><span class="sticker whiteSticker"></span></div>
+            <div class="upSpan background-black"><span class="BLACKSIDE"></span></div>
+            <div class="rightSpan background-black"><span class="BLACKSIDE"></span></div>
+            <div class="leftSpan background-black"><span class="BLACKSIDE"></span></div>
+            <div class="bottomSpan background-black"><span class="BLACKSIDE"></span></div>
+            <div class="backSpan background-black"><span class="BLACKSIDE"></span></div>
+          </div>
+          <div class="block front b6">
+            <div class="frontSpan background-black"><span class="sticker whiteSticker"></span></div>
+            <div class="upSpan background-black"><span class="BLACKSIDE"></span></div>
+            <div class="rightSpan background-black"><span class="BLACKSIDE"></span></div>
+            <div class="leftSpan background-black"><span class="sticker yellowSticker"></span></div>
+            <div class="bottomSpan background-black"><span class="BLACKSIDE"></span></div>
+            <div class="backSpan background-black"><span class="BLACKSIDE"></span></div>
+          </div>
+          <div class="block front b7">
+            <div class="frontSpan background-black"><span class="sticker whiteSticker"></span></div>
+            <div class="upSpan background-black"><span class="BLACKSIDE"></span></div>
+            <div class="rightSpan background-black"><span class="sticker greenSticker"></span></div>
+            <div class="leftSpan background-black"><span class="BLACKSIDE"></span></div>
+            <div class="bottomSpan background-black"><span class="sticker blueSticker"></span></div>
+            <div class="backSpan background-black"><span class="BLACKSIDE"></span></div>
+          </div>
+          <div class="block front b8">
+            <div class="frontSpan background-black"><span class="sticker whiteSticker"></span></div>
+            <div class="upSpan background-black"><span class="BLACKSIDE"></span></div>
+            <div class="rightSpan background-black"><span class="BLACKSIDE"></span></div>
+            <div class="leftSpan background-black"><span class="BLACKSIDE"></span></div>
+            <div class="bottomSpan background-black"><span class="sticker blueSticker"></span></div>
+            <div class="backSpan background-black"><span class="BLACKSIDE"></span></div>
+          </div>
+          <div class="block front b9">
+            <div class="frontSpan background-black"><span class="sticker whiteSticker"></span></div>
+            <div class="upSpan background-black"><span class="BLACKSIDE"></span></div>
+            <div class="rightSpan background-black"><span class="BLACKSIDE"></span></div>
+            <div class="leftSpan background-black"><span class="sticker yellowSticker"></span></div>
+            <div class="bottomSpan background-black"><span class="sticker blueSticker"></span></div>
+            <div class="backSpan background-black"><span class="BLACKSIDE"></span></div>
+          </div>
+          <div class="block center b1">
+            <div class="frontSpan background-black"><span class="BLACKSIDE"></span></div>
+            <div class="upSpan background-black"><span class="sticker pinkSticker"></span></div>
+            <div class="rightSpan background-black"><span class="sticker greenSticker"></span></div>
+            <div class="leftSpan background-black"><span class="BLACKSIDE"></span></div>
+            <div class="bottomSpan background-black"><span class="BLACKSIDE"></span></div>
+            <div class="backSpan background-black"><span class="BLACKSIDE"></span></div>
+          </div>
+          <div class="block center b2">
+            <div class="frontSpan background-black"><span class="BLACKSIDE"></span></div>
+            <div class="upSpan background-black"><span class="sticker pinkSticker"></span></div>
+            <div class="rightSpan background-black"><span class="BLACKSIDE"></span></div>
+            <div class="leftSpan background-black"><span class="BLACKSIDE"></span></div>
+            <div class="bottomSpan background-black"><span class="BLACKSIDE"></span></div>
+            <div class="backSpan background-black"><span class="BLACKSIDE"></span></div>
+          </div>
+          <div class="block center b3">
+            <div class="frontSpan background-black"><span class="BLACKSIDE"></span></div>
+            <div class="upSpan background-black"><span class="sticker pinkSticker"></span></div>
+            <div class="leftSpan background-black"><span class="sticker yellowSticker"></span></div>
+            <div class="rightSpan background-black"><span class="BLACKSIDE"></span></div>
+            <div class="bottomSpan background-black"><span class="BLACKSIDE"></span></div>
+            <div class="backSpan background-black"><span class="BLACKSIDE"></span></div>
+          </div>
+          <div class="block center b4">
+            <div class="frontSpan background-black"><span class="BLACKSIDE"></span></div>
+            <div class="upSpan background-black"><span class="BLACKSIDE"></span></div>
+            <div class="rightSpan background-black"><span class="sticker greenSticker"></span></div>
+            <div class="leftSpan background-black"><span class="BLACKSIDE"></span></div>
+            <div class="bottomSpan background-black"><span class="BLACKSIDE"></span></div>
+            <div class="backSpan background-black"><span class="BLACKSIDE"></span></div>
+          </div>
+          <div class="block center b5">
+            <div class="frontSpan background-black"><span class="BLACKSIDE"></span></div>
+            <div class="upSpan background-black"><span class="BLACKSIDE"></span></div>
+            <div class="rightSpan background-black"><span class="BLACKSIDE"></span></div>
+            <div class="leftSpan background-black"><span class="BLACKSIDE"></span></div>
+            <div class="bottomSpan background-black"><span class="BLACKSIDE"></span></div>
+            <div class="backSpan background-black"><span class="BLACKSIDE"></span></div>
+          </div>
+          <div class="block center b6">
+            <div class="frontSpan background-black"><span class="BLACKSIDE"></span></div>
+            <div class="upSpan background-black"><span class="BLACKSIDE"></span></div>
+            <div class="leftSpan background-black"><span class="sticker yellowSticker"></span></div>
+            <div class="rightSpan background-black"><span class="BLACKSIDE"></span></div>
+            <div class="bottomSpan background-black"><span class="BLACKSIDE"></span></div>
+            <div class="backSpan background-black"><span class="BLACKSIDE"></span></div>
+          </div>
+          <div class="block center b7">
+            <div class="frontSpan background-black"><span class="BLACKSIDE"></span></div>
+            <div class="upSpan background-black"><span class="BLACKSIDE"></span></div>
+            <div class="rightSpan background-black"><span class="sticker greenSticker"></span></div>
+            <div class="leftSpan background-black"><span class="BLACKSIDE"></span></div>
+            <div class="bottomSpan background-black"><span class="sticker blueSticker"></span></div>
+            <div class="backSpan background-black"><span class="BLACKSIDE"></span></div>
+          </div>
+          <div class="block center b8">
+            <div class="frontSpan background-black"><span class="BLACKSIDE"></span></div>
+            <div class="upSpan background-black"><span class="BLACKSIDE"></span></div>
+            <div class="leftSpan background-black"><span class="BLACKSIDE"></span></div>
+            <div class="rightSpan background-black"><span class="BLACKSIDE"></span></div>
+            <div class="bottomSpan background-black"><span class="sticker blueSticker"></span></div>
+            <div class="backSpan background-black"><span class="BLACKSIDE"></span></div>
+          </div>
+          <div class="block center b9">
+            <div class="frontSpan background-black"><span class="BLACKSIDE"></span></div>
+            <div class="upSpan background-black"><span class="BLACKSIDE"></span></div>
+            <div class="rightSpan background-black"><span class="BLACKSIDE"></span></div>
+            <div class="leftSpan background-black"><span class="sticker yellowSticker"></span></div>
+            <div class="bottomSpan background-black"><span class="sticker blueSticker"></span></div>
+            <div class="backSpan background-black"><span class="BLACKSIDE"></span></div>
+          </div>
+          <div class="block back b1">
+            <div class="frontSpan background-black"><span class="BLACKSIDE"></span></div>
+            <div class="upSpan background-black"><span class="sticker pinkSticker"></span></div>
+            <div class="rightSpan background-black"><span class="sticker greenSticker"></span></div>
+            <div class="leftSpan background-black"><span class="BLACKSIDE"></span></div>
+            <div class="bottomSpan background-black"><span class="BLACKSIDE"></span></div>
+            <div class="backSpan background-black"><span class="sticker orangeSticker"></span></div>
+          </div>
+          <div class="block back b2">
+            <div class="frontSpan background-black"><span class="BLACKSIDE"></span></div>
+            <div class="upSpan background-black"><span class="sticker pinkSticker"></span></div>
+            <div class="rightSpan background-black"><span class="BLACKSIDE"></span></div>
+            <div class="leftSpan background-black"><span class="BLACKSIDE"></span></div>
+            <div class="bottomSpan background-black"><span class="BLACKSIDE"></span></div>
+            <div class="backSpan background-black"><span class="sticker orangeSticker"></span></div>
+          </div>
+          <div class="block back b3">
+            <div class="frontSpan background-black"><span class="BLACKSIDE"></span></div>
+            <div class="upSpan background-black"><span class="sticker pinkSticker"></span></div>
+            <div class="leftSpan background-black"><span class="sticker yellowSticker"></span></div>
+            <div class="rightSpan background-black"><span class="BLACKSIDE"></span></div>
+            <div class="bottomSpan background-black"><span class="BLACKSIDE"></span></div>
+            <div class="backSpan background-black"><span class="sticker orangeSticker"></span></div>
+          </div>
+          <div class="block back b4">
+            <div class="frontSpan background-black"><span class="BLACKSIDE"></span></div>
+            <div class="upSpan background-black"><span class="BLACKSIDE"></span></div>
+            <div class="rightSpan background-black"><span class="sticker greenSticker"></span></div>
+            <div class="leftSpan background-black"><span class="BLACKSIDE"></span></div>
+            <div class="bottomSpan background-black"><span class="BLACKSIDE"></span></div>
+            <div class="backSpan background-black"><span class="sticker orangeSticker"></span></div>
+          </div>
+          <div class="block back b5">
+            <div class="frontSpan background-black"><span class="BLACKSIDE"></span></div>
+            <div class="upSpan background-black"><span class="BLACKSIDE"></span></div>
+            <div class="rightSpan background-black"><span class="BLACKSIDE"></span></div>
+            <div class="leftSpan background-black"><span class="BLACKSIDE"></span></div>
+            <div class="bottomSpan background-black"><span class="BLACKSIDE"></span></div>
+            <div class="backSpan background-black"><span class="sticker orangeSticker"></span></div>
+          </div>
+          <div class="block back b6">
+            <div class="frontSpan background-black"><span class="BLACKSIDE"></span></div>
+            <div class="upSpan background-black"><span class="BLACKSIDE"></span></div>
+            <div class="leftSpan background-black"><span class="sticker yellowSticker"></span></div>
+            <div class="rightSpan background-black"><span class="BLACKSIDE"></span></div>
+            <div class="bottomSpan background-black"><span class="BLACKSIDE"></span></div>
+            <div class="backSpan background-black"><span class="sticker orangeSticker"></span></div>
+          </div>
+          <div class="block back b7">
+            <div class="frontSpan background-black"><span class="BLACKSIDE"></span></div>
+            <div class="upSpan background-black"><span class="BLACKSIDE"></span></div>
+            <div class="rightSpan background-black"><span class="sticker greenSticker"></span></div>
+            <div class="leftSpan background-black"><span class="BLACKSIDE"></span></div>
+            <div class="bottomSpan background-black"><span class="sticker blueSticker"></span></div>
+            <div class="backSpan background-black"><span class="sticker orangeSticker"></span></div>
+          </div>
+          <div class="block back b8">
+            <div class="frontSpan background-black"><span class="BLACKSIDE"></span></div>
+            <div class="upSpan background-black"><span class="BLACKSIDE"></span></div>
+            <div class="leftSpan background-black"><span class="BLACKSIDE"></span></div>
+            <div class="rightSpan background-black"><span class="BLACKSIDE"></span></div>
+            <div class="bottomSpan background-black"><span class="sticker blueSticker"></span></div>
+            <div class="backSpan background-black"><span class="sticker orangeSticker"></span></div>
+          </div>
+          <div class="block back b9">
+            <div class="frontSpan background-black"><span class="BLACKSIDE"></span></div>
+            <div class="upSpan background-black"><span class="BLACKSIDE"></span></div>
+            <div class="rightSpan background-black"><span class="BLACKSIDE"></span></div>
+            <div class="leftSpan background-black"><span class="sticker yellowSticker"></span></div>
+            <div class="bottomSpan background-black"><span class="sticker blueSticker"></span></div>
+            <div class="backSpan background-black"><span class="sticker orangeSticker"></span></div>
+          </div>
+      </div></div></section>
+      <script src="./rubik.js">
+      </script>
+
+    <script>
+        let quadradoMenor = document.querySelector(".quadradoMenor")
+        let elemento = document.querySelector(".elementoTeste")
+        let slider2 = document.querySelectorAll(".slider")[1]
+        let slider1 = document.querySelectorAll(".slider")[0]
+        let inputs = document.querySelectorAll(".selectTransform input")
+        slider2.addEventListener("input", atualizarQuadradoMenor)
+        slider1.addEventListener("input", atualizarElementoTeste)
+        function atualizarQuadradoMenor() {
+            quadradoMenor.style.transform = `translateZ(${slider2.value * 20}px)`
+            quadradoMenor.innerHTML = `translateZ(<strong>${slider2.value * 20}</strong>px)`
+        }
+        elemento.style.transform = "translateX(0px) translateY(0px) scaleX(1) scaleY(1) scale(1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skewX(0deg) skewY(0deg)"
+        let transforms = elemento.style.transform.split(" ")
+        let slideValues = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        function atualizarElementoTeste() {
+            if (document.querySelector("#translateX").checked) {
+                elemento.style.transform = `translateX(${slider1.value * 5}px) ${transforms[1]} ${transforms[2]} ${transforms[3]} ${transforms[4]} ${transforms[5]} ${transforms[6]} ${transforms[7]} ${transforms[8]} ${transforms[9]}`
+                elemento.innerHTML = `translateX(<strong>${(slider1.value * 5).toFixed(2)}</strong>px)`
+                transforms[0] = `translateX(${slider1.value * 5}px)`
+                slideValues[0] = slider1.value
+            }
+            if (document.querySelector("#translateY").checked) {
+                elemento.style.transform = `${transforms[0]} translateY(${slider1.value * 5}px) ${transforms[2]} ${transforms[3]} ${transforms[4]} ${transforms[5]} ${transforms[6]} ${transforms[7]} ${transforms[8]} ${transforms[9]}`
+                elemento.innerHTML = `translateY(<strong>${(slider1.value * 5).toFixed(2)}</strong>px)`
+                transforms[1] = `translateY(${slider1.value * 5}px)`
+                slideValues[1] = slider1.value
+            }
+            if (document.querySelector("#scaleX").checked) {
+                elemento.style.transform = `${transforms[0]} ${transforms[1]} scaleX(${slider1.value * 0.02 + 1}) ${transforms[3]} ${transforms[4]} ${transforms[5]} ${transforms[6]} ${transforms[7]} ${transforms[8]} ${transforms[9]}`
+                elemento.innerHTML = `scaleX(<strong>${(slider1.value * 0.02 + 1).toFixed(2)}</strong>)`
+                transforms[2] = `scaleX(${slider1.value * 0.02 + 1})`
+                slideValues[2] = slider1.value
+            }
+            if (document.querySelector("#scaleY").checked) {
+                elemento.style.transform = `${transforms[0]} ${transforms[1]} ${transforms[2]} scaleY(${slider1.value * 0.02 + 1}) ${transforms[4]} ${transforms[5]} ${transforms[6]} ${transforms[7]} ${transforms[8]} ${transforms[9]}`
+                elemento.innerHTML = `scaleY(<strong>${(slider1.value * 0.02 + 1).toFixed(2)}</strong>)`
+                transforms[3] = `scaleY(${slider1.value * 0.02 + 1})`
+                slideValues[3] = slider1.value
+            }
+            if (document.querySelector("#scale").checked) {
+                elemento.style.transform = `${transforms[0]} ${transforms[1]} ${transforms[2]} ${transforms[3]} scale(${slider1.value * 0.02 + 1}) ${transforms[5]} ${transforms[6]} ${transforms[7]} ${transforms[8]} ${transforms[9]}`
+                elemento.innerHTML = `scale(<strong>${(slider1.value * 0.02 + 1).toFixed(2)}</strong>)`
+                transforms[4] = `scale(${slider1.value * 0.02 + 1})`
+                slideValues[4] = slider1.value
+            }
+            if (document.querySelector("#rotateX").checked) {
+                elemento.style.transform = `${transforms[0]} ${transforms[1]} ${transforms[2]} ${transforms[3]} ${transforms[4]} rotateX(${slider1.value * 3.6}deg) ${transforms[6]} ${transforms[7]} ${transforms[8]} ${transforms[9]}`
+                elemento.innerHTML = `rotateX(<strong>${(slider1.value * 3.6).toFixed(2)}</strong>deg)`
+                transforms[5] = `rotateX(${slider1.value * 3.6}deg)`
+                slideValues[5] = slider1.value
+            }
+            if (document.querySelector("#rotateY").checked) {
+                elemento.style.transform = `${transforms[0]} ${transforms[1]} ${transforms[2]} ${transforms[3]} ${transforms[4]} ${transforms[5]} rotateY(${slider1.value * 3.6}deg) ${transforms[7]} ${transforms[8]} ${transforms[9]}`
+                elemento.innerHTML = `rotateY(<strong>${(slider1.value * 3.6).toFixed(2)}</strong>deg)`
+                transforms[6] = `rotateY(${slider1.value * 3.6}deg)`
+                slideValues[6] = slider1.value
+            }
+            if (document.querySelector("#rotateZ").checked) {
+                elemento.style.transform = `${transforms[0]} ${transforms[1]} ${transforms[2]} ${transforms[3]} ${transforms[4]} ${transforms[5]} ${transforms[6]} rotateZ(${slider1.value * 3.6}deg) ${transforms[8]} ${transforms[9]}`
+                elemento.innerHTML = `rotateZ(<strong>${(slider1.value * 3.6).toFixed(2)}</strong>deg)`
+                transforms[7] = `rotateZ(${(slider1.value * 3.6).toFixed(2)}deg)`
+                slideValues[7] = slider1.value
+            }
+            if (document.querySelector("#skewX").checked) {
+                elemento.style.transform = `${transforms[0]} ${transforms[1]} ${transforms[2]} ${transforms[3]} ${transforms[4]} ${transforms[5]} ${transforms[6]} ${transforms[7]} skewX(${slider1.value * 3.6}deg) ${transforms[9]}`
+                elemento.innerHTML = `skewX(<strong>${(slider1.value * 3.6).toFixed(2)}</strong>deg)`
+                transforms[8] = `skewX(${slider1.value * 3.6}deg)`
+                slideValues[8] = slider1.value
+            }
+            if (document.querySelector("#skewY").checked) {
+                elemento.style.transform = `${transforms[0]} ${transforms[1]} ${transforms[2]} ${transforms[3]} ${transforms[4]} ${transforms[5]} ${transforms[6]} ${transforms[7]} ${transforms[8]} skewY(${slider1.value * 3.6}deg)`
+                elemento.innerHTML = `skewY(<strong>${(slider1.value * 3.6).toFixed(2)}</strong>deg)`
+                transforms[9] = `skewY(${slider1.value * 3.6}deg)`
+                slideValues[9] = slider1.value
+            }
+        }
+        inputs.forEach((input, index) => {
+            input.addEventListener("input", () => {
+                slider1.value = slideValues[index]
+                let unit = "px";
+                if (input.id.includes("rotate") || input.id.includes("skew")) {
+                    unit = "deg";
+                }
+                if (input.id.includes("scale")) {
+                    unit = "";
+                    elemento.innerHTML = `${input.id}(<strong>${(slider1.value * 0.02 + 1).toFixed(2)}</strong>)`;
+                } else {
+                    elemento.innerHTML = `${input.id}(<strong>${slider1.value * (unit === "deg" ? 3.6 : 5).toFixed(2)}</strong>${unit})`;
+                }
+            })
+        })
+
+        let inputs2 = document.querySelectorAll(".select3d input")
+        inputs2.forEach(input => input.addEventListener("input", () => {
+            document.querySelector("#div2").style.transformStyle = input.id
+        }))
+
+        const card = document.querySelector("#card")
+        const front = document.querySelector("#t1")
+        const back = document.querySelector("#t2")
+        let can = true
+        let n = 1
+        card.addEventListener("click", () => {
+            console.log(can)
+            if (can) {
+                if (card.className == "flipF") {
+                    card.className = "flipB"
+                }
+                else {
+                    card.className = "flipF"
+                }
+                if (n == 1) {
+                    setTimeout(() => { front.innerHTML = "E essa é uma mensagem diferente" }, 1000)
+                }
+                else if (n == 2) {
+                    setTimeout(() => { back.innerHTML = "Olha que legal :)" }, 1000)
+                }
+                n++
+                can = false
+                setTimeout(() => { can = true }, 1000)
+
+            }
+        }
+        )  
+    </script>
+</body>
+
+</html>
